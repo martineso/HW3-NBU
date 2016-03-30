@@ -4,7 +4,7 @@ import uni.arrays.utilites.ArraysUtility;
 import uni.course.Course;
 import uni.course.exception.CourseNotFoundException;
 
-public class Major {
+public class MajorVersion2 {
 	
 	private String name;
 	private int serialNumber;
@@ -14,7 +14,7 @@ public class Major {
 
 	private static int counter = 0;
 	
-	public Major(String name, boolean isMajor) {
+	public MajorVersion2(String name, boolean isMajor) {
 		
 		this.name = name;
 		this.isMajor = isMajor;
@@ -63,19 +63,6 @@ public class Major {
 		
 	}
 	
-	public void printMandatoryCourses() {
-		
-		System.out.println("The mandatory courses of " + this.getName() + " major are:");
-		ArraysUtility.printCourses(mandatoryCourses);
-	}
-	
-	public void printElectiveCourses() {
-		
-		System.out.println("The elective courses of " + this.getName() + " major are:");
-		ArraysUtility.printCourses(electiveCourses);
-		
-	}
-	
 	public boolean hasCourse(Course course) {
 		
 		boolean hasElectiveCourse = false;
@@ -103,5 +90,19 @@ public class Major {
 		
 		return (hasMandatoryCourse || hasElectiveCourse);
 	}
+	
+	public void printMandatoryCourses() {
+		
+		System.out.println("The mandatory courses of " + this.getName() + " major are:");
+		ArraysUtility.printCourses(mandatoryCourses);
+	}
+	
+	public void printElectiveCourses() {
+		
+		System.out.println("The elective courses of " + this.getName() + " major are:");
+		ArraysUtility.printCourses(electiveCourses);
+		
+	}
+	
 	
 }

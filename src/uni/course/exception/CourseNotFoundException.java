@@ -1,5 +1,11 @@
 package uni.course.exception;
 
+
+/**
+ * 
+ * @author Martin Kontilov F74466
+ *
+ */
 public class CourseNotFoundException extends Exception {
 
 	private static final long serialVersionUID = -2321288625104989781L;
