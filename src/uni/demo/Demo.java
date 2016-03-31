@@ -1,6 +1,7 @@
 package uni.demo;
 
 import uni.course.Course;
+import uni.course.exception.CourseNotFoundException;
 
 public class Demo {
 	public static void main(String[] args) {
@@ -17,15 +18,20 @@ public class Demo {
     	course1.printPrerequisites();
     	
     	System.out.println("Attempt to delete BCT101");
+    	
     	try {
     		
     		course1.deletePrerequisite("BCT101");
+    		course1.deletePrerequisite("BCT101");
+    		//course1.deletePrerequisite("BCT101");
     		course1.printPrerequisites();
     		
-    	} catch(Exception e) {
+    	} catch(CourseNotFoundException e) {
     		
     		System.out.println("Error: " + e.getMessage());
     		
     	}
+    	
+    	
 	}
 }

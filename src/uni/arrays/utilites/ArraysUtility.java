@@ -102,18 +102,19 @@ public class ArraysUtility {
 	 */
 	public static Course[] deleteCourse(Course[] coursesArray, String courseName) throws CourseNotFoundException {
 		
+		 
 		for(int i = 0; i < coursesArray.length; i++) {
+			
+			if(coursesArray[i] != null) {
+				if(coursesArray[i].getName().equalsIgnoreCase(courseName)) {
 
-			if(coursesArray[i].getName().equalsIgnoreCase(courseName)) {
-
-
-				coursesArray[i] = null;
-				coursesArray = keepArrayElementsInOrder(i, coursesArray);
-				return coursesArray;
-
+					coursesArray[i] = null;
+					coursesArray = keepArrayElementsInOrder(i, coursesArray);
+					return coursesArray;
+				}
 			}
-
 		}
+		
 
 		throw new CourseNotFoundException("No such element found!");
 	}
@@ -129,4 +130,5 @@ public class ArraysUtility {
 		return pos;
 	}
 	
+
 }

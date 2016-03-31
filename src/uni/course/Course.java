@@ -45,6 +45,7 @@ public class Course {
 		try {
 			
 			this.prerequisites = ArraysUtility.deleteCourse(prerequisites, courseName);
+			
 		} catch(CourseNotFoundException e) {
 			
 			throw new CourseNotFoundException("No such element found!");

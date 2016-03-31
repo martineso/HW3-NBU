@@ -35,6 +35,7 @@ public class MajorDemo {
 		
 		IT.printElectiveCourses();
 		
+		System.out.print("The IT major has a course in Chemistry? ");
 		System.out.println(IT.hasCourse(Chemistry));
 		
 		try {
@@ -44,8 +45,29 @@ public class MajorDemo {
 			System.err.println("Error: " + e.getMessage());
 		}
 		
+		System.out.println("-------");
+		
 		try {
+		
 			Nasko.enrollIn(Calculus);
+			Nasko.enrollIn(Physics);
+			Nasko.setGrade(Calculus, 3);
+			Nasko.setGrade(Physics, 3);
+			double calculusGrade = Nasko.getGradeFor(Calculus);
+			System.out.println("Calculus grade: " + calculusGrade);
+			
+			double physicsGrade = Nasko.getGradeFor(Physics);
+			System.out.println("Physics grade: " + physicsGrade);
+			
+			System.out.print("Attempt to drop out of Physics course: ");
+			Nasko.dropOutOf(Physics);
+			System.out.println(Nasko.attendsCourse(Physics) ? "not successfull" : "succesfull");
+			
+			System.out.println("Nasko's credits: " + Nasko.calculateCredits());
+			
+			System.out.println("Has graduated? " + Nasko.hasGraduated());
+
+			
 		} catch (CourseNotFoundException e) {
 			System.err.println("Error: " + e.getMessage());
 		}

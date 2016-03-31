@@ -71,7 +71,7 @@ public class Major {
 	
 	public void printElectiveCourses() {
 		
-		System.out.println("The elective courses of " + this.getName() + " major are:");
+		System.out.println("The elective courses of the " + this.getName() + " major are:");
 		ArraysUtility.printCourses(electiveCourses);
 		
 	}
